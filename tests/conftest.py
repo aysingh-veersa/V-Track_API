@@ -13,7 +13,7 @@ def init_driver(request, browser):
     else:
         driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
 
-    url = "https://vtrack-dev-web.azurewebsites.net/"
+    url = "https://vtrack-dev-web.azurewebsites.net/dashboard"
     driver.get(url)
     driver.maximize_window()
     driver.implicitly_wait(30)

@@ -5,4 +5,6 @@ class LoginPage:
     username = (By.XPATH, "//input[@type='email']")
     password = (By.XPATH, "//input[@type='password']")
     NextBtn = (By.XPATH, "//input[@type='submit']")
+    SignIn = (By.XPATH, "//input[@value='Sign in']")
+    BackBtn = (By.ID, "idBtn_Back")
     

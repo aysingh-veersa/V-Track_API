@@ -47,8 +47,21 @@ class ObjectActions:
             
     @staticmethod
     def switch_to_next_window(driver):
-        next_window_index = (driver.window_handles.index(driver.current_window_handle)+1) % len(driver.window_handles)
-        next_window_handle = driver.window_handles[next_window_index]
+        window_handles = driver.window_handles
+        global current_window_handle
+        current_window_handle = driver.current_window_handle
+        next_window_index = (window_handles.index(current_window_handle) + 1) % len(window_handles)
+        next_window_handle = window_handles[next_window_index]
         driver.switch_to.window(next_window_handle)
+     
+    @staticmethod    
+    def switch_to_current_window(driver):
+        driver.switch_to.window(current_window_handle)
+        
+    @staticmethod
+    def get_localStorage_Variable(driver, key):
+        return driver.execute_script(f"return window.localStorage.getItem('{key}');")
+        
+        
         
         

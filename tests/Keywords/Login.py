@@ -1,3 +1,4 @@
+import time
 from tests.Utilities.TestActions import ObjectActions
 from tests.Pages.loginPage import LoginPage
 
@@ -10,4 +11,9 @@ class TestLogin:
         ObjectActions.set_text(self, LoginPage.username, username)
         ObjectActions.click_object(self, LoginPage.NextBtn)
         ObjectActions.set_text(self, LoginPage.password, password)
+        ObjectActions.click_object(self, LoginPage.SignIn)
+        ObjectActions.click_object(self, LoginPage.BackBtn)
+        ObjectActions.switch_to_current_window(self)
+        time.sleep(10)
+        
         
