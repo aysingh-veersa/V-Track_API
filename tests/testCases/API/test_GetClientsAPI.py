@@ -20,6 +20,5 @@ class TestAPI(BaseTest):
         response  = requests.get('https://vtrack-dev-api.azurewebsites.net/Client/get-clients?page=1&pagesize=10&sortBy=clientName&sortDir=ASC&searchKey=&timestamp=1709276135171',headers=header)
         print(response.status_code)
         print(response.json())
-        # print(response.text)
         
         

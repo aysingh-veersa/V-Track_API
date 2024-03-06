@@ -14,7 +14,7 @@ class TestLogin:
         ObjectActions.click_object(self, LoginPage.SignIn)
         ObjectActions.click_object(self, LoginPage.BackBtn)
         ObjectActions.switch_to_current_window(self)
-        # ObjectActions.click_object(self, LoginPage.V_track)
         time.sleep(10)
+        ObjectActions.click_object(self, LoginPage.V_track)
         
         

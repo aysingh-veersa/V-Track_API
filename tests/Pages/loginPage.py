@@ -7,5 +7,5 @@ class LoginPage:
     NextBtn = (By.XPATH, "//input[@type='submit']")
     SignIn = (By.XPATH, "//input[@value='Sign in']")
     BackBtn = (By.ID, "idBtn_Back")
-    V_track = (By.XPATH, "//span[text()='Track']")
+    V_track = (By.XPATH, "//span[text()='Track']/../../..")
     

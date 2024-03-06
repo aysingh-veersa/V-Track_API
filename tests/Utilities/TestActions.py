@@ -63,5 +63,10 @@ class ObjectActions:
         return driver.execute_script(f"return window.localStorage.getItem('{key}');")
         
         
+    @staticmethod
+    def wait_for_element_to_be_clickable(driver, locator):
+        element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable(locator))
+        return bool(element)
+        
         
         
