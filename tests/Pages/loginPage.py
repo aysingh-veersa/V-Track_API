@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class LoginPage:
     loginBtn = (By.XPATH, "//button[@class='loginBtn']")
     username = (By.XPATH, "//input[@type='email']")
@@ -8,4 +9,4 @@ class LoginPage:
     SignIn = (By.XPATH, "//input[@value='Sign in']")
     BackBtn = (By.ID, "idBtn_Back")
     V_track = (By.XPATH, "//span[text()='Track']/../../..")
-    
+    clientTab = (By.XPATH, "//div[text()='Client Admin']/..")
