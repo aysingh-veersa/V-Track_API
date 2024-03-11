@@ -11,8 +11,9 @@ import requests
 class TestUI(BaseTest):
 
     def test_ui(self):
-        TestLogin.login_into_application(self.driver, VTrackCred.username, VTrackCred.password)
+        TestLogin.login_into_application(self.driver, VTrackCred.username, VTrackCred.password)  
         time.sleep(10)
+        ObjectActions.switch_to_next_window(self.driver)
         ObjectActions.click_object(self.driver, LoginPage.clientTab)
 
 

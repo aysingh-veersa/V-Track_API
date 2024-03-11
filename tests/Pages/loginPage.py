@@ -10,3 +10,4 @@ class LoginPage:
     BackBtn = (By.ID, "idBtn_Back")
     V_track = (By.XPATH, "//span[text()='Track']/../../..")
     clientTab = (By.XPATH, "//div[text()='Client Admin']/..")
+    body = (By.ID, "root")

@@ -67,6 +67,11 @@ class ObjectActions:
     def wait_for_element_to_be_clickable(driver, locator):
         element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable(locator))
         return bool(element)
+    
+    @staticmethod
+    def switch_to_nextTab(driver, locator):
+        element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable(locator))
+        element.send_keys(Keys.CONTROL + 't')
         
         
         
