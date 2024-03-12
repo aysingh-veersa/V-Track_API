@@ -7,13 +7,13 @@ class TestLogin:
     @staticmethod
     def login_into_application(self, username, password):
         ObjectActions.click_object(self, LoginPage.loginBtn)
-        ObjectActions.switch_to_next_window(self)
+        ObjectActions.switch_to_window_title(self, "Sign in to your account")
         ObjectActions.set_text(self, LoginPage.username, username)
         ObjectActions.click_object(self, LoginPage.NextBtn)
         ObjectActions.set_text(self, LoginPage.password, password)
         ObjectActions.click_object(self, LoginPage.SignIn)
         ObjectActions.click_object(self, LoginPage.BackBtn)
-        ObjectActions.switch_to_current_window(self)
+        ObjectActions.switch_to_window_title(self, "Sign in to your account")
         time.sleep(10)
         ObjectActions.click_object(self, LoginPage.V_track)
         

@@ -13,9 +13,11 @@ class TestUI(BaseTest):
     def test_ui(self):
         TestLogin.login_into_application(self.driver, VTrackCred.username, VTrackCred.password)  
         time.sleep(15)
-        ObjectActions.switch_to_next_window(self.driver)
-        ObjectActions.click_object(self.driver, LoginPage.clientTab)
-        time.sleep(20)
+        ObjectActions.switch_to_window_title(self.driver, "vTrack")
+        time.sleep(10)
+        if(ObjectActions.wait_for_element_to_be_clickable(self.driver, LoginPage.clientTab)):
+            ObjectActions.click_object(self.driver, LoginPage.clientTab)
+        time.sleep(5)
         ObjectActions.click_object(self.driver, LoginPage.addBtn)
         time.sleep(3)
         ObjectActions.set_text(self.driver, LoginPage.clientName,"Test")
