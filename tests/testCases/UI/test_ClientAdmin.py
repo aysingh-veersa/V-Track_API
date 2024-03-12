@@ -14,7 +14,7 @@ class TestUI(BaseTest):
         TestLogin.login_into_application(self.driver, VTrackCred.username, VTrackCred.password)  
         time.sleep(15)
         ObjectActions.switch_to_window_title(self.driver, "vTrack")
-        time.sleep(10)
+        time.sleep(15)
         if(ObjectActions.wait_for_element_to_be_clickable(self.driver, LoginPage.clientTab)):
             ObjectActions.click_object(self.driver, LoginPage.clientTab)
         time.sleep(5)
