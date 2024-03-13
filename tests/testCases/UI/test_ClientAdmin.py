@@ -26,15 +26,16 @@ class TestUI(BaseTest):
         ObjectActions.click_object(self.driver, LoginPage.currency)
         ObjectActions.click_object(self.driver, LoginPage.inr)
         ObjectActions.click_object(self.driver, LoginPage.MSAStartDate)
-        ObjectActions.set_text(self.driver, LoginPage.MSAStartDate,"03/12/2024")
+        ObjectActions.set_text(self.driver, LoginPage.MSAStartDate,"01/01/2024")
         ObjectActions.click_object(self.driver, LoginPage.MSAEndDate)
-        ObjectActions.set_text(self.driver, LoginPage.MSAEndDate,"03/13/2024")
+        ObjectActions.set_text(self.driver, LoginPage.MSAEndDate,"12/12/2024")
         ObjectActions.click_object(self.driver, LoginPage.businessOwner)
         ObjectActions.click_object(self.driver, LoginPage.veersaDummyUser)
         ObjectActions.set_text(self.driver, LoginPage.paymentTerms,"1")
         ObjectActions.click_object(self.driver, LoginPage.deliveryOfficer)
         ObjectActions.click_object(self.driver, LoginPage.veersaDummyUser)
         ObjectActions.click_object(self.driver, LoginPage.addIcon)
+        time.sleep(3)
 
         # ObjectActions.select_value_from_dropdown(self.driver, LoginPage.currency,"Indian Rupee")
 
