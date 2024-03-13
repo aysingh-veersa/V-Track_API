@@ -37,6 +37,4 @@ class TestUI(BaseTest):
         ObjectActions.click_object(self.driver, LoginPage.addIcon)
         time.sleep(3)
 
-        # ObjectActions.select_value_from_dropdown(self.driver, LoginPage.currency,"Indian Rupee")
-
 
