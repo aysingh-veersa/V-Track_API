@@ -13,7 +13,8 @@ class TestLogin:
         ObjectActions.set_text(self, LoginPage.password, password)
         ObjectActions.click_object(self, LoginPage.SignIn)
         ObjectActions.click_object(self, LoginPage.BackBtn)
-        ObjectActions.switch_to_window_title(self, "Sign in to your account")
+        # ObjectActions.close_window_title(self, "Sign in to your account")
+        ObjectActions.switch_to_window_title(self, "Veersa Portal")
         time.sleep(10)
         ObjectActions.click_object(self, LoginPage.V_track)
         
