@@ -19,7 +19,7 @@ class TestUI(BaseTest):
             ObjectActions.click_object(self.driver, LoginPage.clientTab)
         time.sleep(5)
         ObjectActions.click_object(self.driver, LoginPage.addBtn)
-        time.sleep(3)
+        time.sleep(10)
         ObjectActions.set_text(self.driver, LoginPage.clientName,"Test")
         ObjectActions.click_object(self.driver, LoginPage.clientLocation)
         ObjectActions.click_object(self.driver, LoginPage.clientLocationLi)
