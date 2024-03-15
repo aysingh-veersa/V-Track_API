@@ -11,12 +11,12 @@ class ObjectActions:
 
     @staticmethod
     def click_object(driver, locator):
-        WebDriverWait(driver, 10).until(ec.visibility_of_element_located(locator)).click()
+        WebDriverWait(driver, 15).until(ec.visibility_of_element_located(locator)).click()
         
     @staticmethod
     def set_text(driver, locator, text):
         # ObjectActions.clear_text(driver, locator)
-        WebDriverWait(driver, 10).until(ec.visibility_of_element_located(locator)).send_keys(text)
+        WebDriverWait(driver, 15).until(ec.visibility_of_element_located(locator)).send_keys(text)
         
     # @staticmethod
     # def clear_text(driver, locator):
@@ -65,7 +65,7 @@ class ObjectActions:
         
     @staticmethod
     def wait_for_element_to_be_clickable(driver, locator):
-        element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable(locator))
+        element = WebDriverWait(driver, 15).until(ec.element_to_be_clickable(locator))
         return bool(element)
     
     @staticmethod

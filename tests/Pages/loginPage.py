@@ -23,4 +23,4 @@ class LoginPage:
     veersaDummyUser = (By.XPATH,'//li[text()="Veersa Technologies (noreply@veersatech.com)"]')
     paymentTerms = (By.CSS_SELECTOR,'[id="outlined-required"][type="number"]')
     deliveryOfficer = (By.CSS_SELECTOR,'[aria-labelledby="label-for-deliveryOfficer outlined-select-currency"]')
-    addIcon = (By.CSS_SELECTOR,'#new_row .editDeleteIcon')
+    addIcon = (By.XPATH,"(//tr[@id='new_row']/td/div/img)[1]")
