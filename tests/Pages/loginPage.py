@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage:
+    loading = (By.CLASS_NAME,"css-1ji7omv-MuiBackdrop-root")
     loginBtn = (By.XPATH, "//button[@class='loginBtn']")
     username = (By.XPATH, "//input[@type='email']")
     password = (By.XPATH, "//input[@type='password']")

@@ -12,14 +12,16 @@ class TestUI(BaseTest):
 
     def test_ui(self):
         TestLogin.login_into_application(self.driver, VTrackCred.username, VTrackCred.password)  
-        time.sleep(15)
+        # time.sleep(15)
         ObjectActions.switch_to_window_title(self.driver, "vTrack")
-        time.sleep(15)
+        # time.sleep(15)
+        ObjectActions.verify_element_is_not_present(self.driver, LoginPage.loading)
         if(ObjectActions.wait_for_element_to_be_clickable(self.driver, LoginPage.clientTab)):
             ObjectActions.click_object(self.driver, LoginPage.clientTab)
-        time.sleep(5)
+        # time.sleep(5)
+        ObjectActions.verify_element_is_not_present(self.driver, LoginPage.loading)
         ObjectActions.click_object(self.driver, LoginPage.addBtn)
-        time.sleep(10)
+        # time.sleep(10)
         ObjectActions.set_text(self.driver, LoginPage.clientName,"Test")
         ObjectActions.click_object(self.driver, LoginPage.clientLocation)
         ObjectActions.click_object(self.driver, LoginPage.clientLocationLi)
@@ -35,6 +37,6 @@ class TestUI(BaseTest):
         ObjectActions.click_object(self.driver, LoginPage.deliveryOfficer)
         ObjectActions.click_object(self.driver, LoginPage.veersaDummyUser)
         ObjectActions.click_object(self.driver, LoginPage.addIcon)
-        time.sleep(3)
+        # time.sleep(3)
 
 

@@ -1,6 +1,7 @@
 import time
 from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as ec
 
 
@@ -11,13 +12,17 @@ class ObjectActions:
 
     @staticmethod
     def click_object(driver, locator):
-        WebDriverWait(driver, 15).until(ec.visibility_of_element_located(locator)).click()
-        
+        WebDriverWait(driver, 120).until(ec.visibility_of_element_located(locator)).click()
+   
     @staticmethod
     def set_text(driver, locator, text):
         # ObjectActions.clear_text(driver, locator)
-        WebDriverWait(driver, 15).until(ec.visibility_of_element_located(locator)).send_keys(text)
-        
+        WebDriverWait(driver, 120).until(ec.visibility_of_element_located(locator)).send_keys(text)
+    
+    @staticmethod
+    def verify_element_is_not_present(driver, locator):
+        element = WebDriverWait(driver,120).until_not(ec.presence_of_element_located(locator))
+        return bool(element)    
     # @staticmethod
     # def clear_text(driver, locator):
     #     element = WebDriverWait(driver, 10).until(ec.visibility_of_element_located(locator)).click()
@@ -31,7 +36,7 @@ class ObjectActions:
             driver.switch_to.window(window)
             if driver.title == title:
                 print('SWITCHED TO....' + driver.title)
-                time.sleep(2)
+                driver.implicitly_wait(30)
                 driver.maximize_window()
                 break
     
@@ -41,7 +46,7 @@ class ObjectActions:
         for window in windows:
             driver.switch_to.window(window)
             if driver.title == title:
-                time.sleep(2)
+                driver.implicitly_wait(30)
                 driver.close()
                 break
             
@@ -65,12 +70,12 @@ class ObjectActions:
         
     @staticmethod
     def wait_for_element_to_be_clickable(driver, locator):
-        element = WebDriverWait(driver, 15).until(ec.element_to_be_clickable(locator))
+        element = WebDriverWait(driver, 120,ignored_exceptions=[NoSuchElementException]).until(ec.element_to_be_clickable(locator))
         return bool(element)
     
     @staticmethod
     def switch_to_nextTab(driver, locator):
-        element = WebDriverWait(driver, 10).until(ec.element_to_be_clickable(locator))
+        element = WebDriverWait(driver, 120).until(ec.element_to_be_clickable(locator))
         element.send_keys(Keys.CONTROL + 't')
         
         
